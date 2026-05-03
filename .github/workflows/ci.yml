@@ -20,6 +20,7 @@ jobs:
       - name: SAST con Semgrep
         run: |
           pip install semgrep --break-system-packages
+          export PATH="/home/vboxuser/.local/bin:$PATH"
           semgrep --config=auto
       - name: Escaneo de dependencias
         run: npm audit || true
